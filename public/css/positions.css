@@ -1,0 +1,10 @@
+.your-class{
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.my_button{
+    width:300px;
+    font-family : inherit;
+    font-size: 1em;
+}
