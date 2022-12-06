@@ -35,8 +35,6 @@
                  @endwhile
 
             </select>
-
-<!--            <input type="hidden" name="product_type" id="text_content" value="" />-->
         </div>
     </div>
 
@@ -45,6 +43,8 @@
     <br>
     <div class="form-group">
         <label for="exampleFormControlInput1">Kolikrát</label>
+<!--        Count by měl  reprezentovat číslo kolik je daného produktu uloženo, aby se do balíčku nepřidalo víc než toho produktu je.
+        Bohužel se mi, ale nepovedlo přímo ve view získat vybranou možnost a podle čehož by jsem následně definoval počet pro danej produkt.-->
         <input name="count" type="number" class="form-control-file" placeholder="" max="{{$count}}" required>
     </div>
 
