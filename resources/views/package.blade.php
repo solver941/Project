@@ -43,8 +43,10 @@
     <br>
     <div class="form-group">
         <label for="exampleFormControlInput1">Kolikrát</label>
+
 <!--        Count by měl  reprezentovat číslo kolik je daného produktu uloženo, aby se do balíčku nepřidalo víc než toho produktu je.
         Bohužel se mi, ale nepovedlo přímo ve view získat vybranou možnost a podle čehož by jsem následně definoval počet pro danej produkt.-->
+
         <input name="count" type="number" class="form-control-file" placeholder="" max="{{$count}}" required>
     </div>
 
@@ -52,14 +54,10 @@
 
 
     <div class="form-group">
-
-
-
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Cena</label>
-            <input name="price" type="number" class="form-control-file" placeholder="" required>
-        </div>
+        <label for="exampleFormControlInput1">Cena</label>
+        <input name="price" type="number" class="form-control-file" placeholder="" required>
     </div>
+
     <br><br>
 
     <div class="text-lg-right">
