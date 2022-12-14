@@ -84,7 +84,8 @@ class ProductController extends Controller
             $message = "Error, něco se pokazilo";
             $state = 'error';
         }
-        return redirect()->back()->with($state, $message);
+        return ['state'=>$state,'message'=>$message];
+//        return redirect()->back()->with($state, $message);
     }
 
     public function updatePackage(Request $request, $id)
