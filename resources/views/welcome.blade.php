@@ -7,4 +7,5 @@
     <button onclick="window.location='{{ url("edit_product") }}'">Upravit product</button>
     <button onclick="window.location='{{ url("package") }}'">Vytvořit balíček</button>
     <button onclick="window.location='{{ url("edit_package") }}'">Upravit balíček</button>
+    <button onclick="window.location='{{ url("logout") }}'">Odhlásit se</button>
 </div>
