@@ -8,6 +8,13 @@
 @import 'bootstrap/scss/bootstrap';
 
 
+$dark-blue: #102f7d;
+
+
+.btn-primary {
+    background-color: $dark-blue;
+}
+
 .form-group {
     margin-bottom: 1rem;
 }
