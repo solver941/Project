@@ -21,6 +21,8 @@
         $product = \App\Models\Package::where("id", $id)->get()
 
         ?>
+
+
     <div class="your-class">
         <form action="/package/{{$id}}/update" method="POST" enctype="multipart/form-data">
             @csrf
@@ -46,4 +48,8 @@
             <h1>Žádný balíček nebyl vytvořen</h1>
         </div>
     @endif
+    <div class="d-lg-none">
+        Small
+
+    </div>
 @endsection

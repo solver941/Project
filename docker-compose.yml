@@ -10,7 +10,7 @@ services:
             MYSQL_USER: ${DB_USERNAME}
             MYSQL_PASSWORD: ${DB_PASSWORD}
         volumes:
-            - './docker/db:/var/lib/mysql'
+            - '/lib/systemd/system/mysql.service'
         ports:
             - '3306:3306'
         restart: always

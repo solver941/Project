@@ -21,28 +21,35 @@
         $product = \App\Models\Product::where("id", $id)->get()
 
         ?>
-<div class="your-class">
-    <form action="/product/{{$id}}/update" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method("PATCH")
 
-        <input name="weight" placeholder="váha" type="text" value={{$product[0]->weight}}>
-        <input name="unit" placeholder="jednotka" type="text" value={{$product[0]->unit}}>
-        <input name="price" placeholder="cena" type="number" value={{$product[0]->price}}>
-        &nbsp &nbsp &nbsp &nbsp
-        <textarea name="description" placeholder="popis produktu">{{$product[0]->description}}
-        </textarea>
-        <input name="series_number" placeholder="sériové číslo" type="number" value={{$product[0]->series_number}}>
-        <input name="count" placeholder="Počet" type="number" value={{$product[0]->count}}>
-        <button type="submit">Update</button>
-        &nbsp &nbsp
-        <a href="product/{{$product[0]->id}}/delete" class="text-sm text-gray-500 underline">Delete</a>
-    </form>
 
-</div>
+<!--<div class=".d-none .d-xl-block .d-xxl-none ">-->
+    <div class="your-class">
+        <form action="/product/{{$id}}/update" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method("PATCH")
+
+            <input name="weight" placeholder="váha" type="text" value={{$product[0]->weight}}>
+            <input name="unit" placeholder="jednotka" type="text" value={{$product[0]->unit}}>
+            <input name="price" placeholder="cena" type="number" value={{$product[0]->price}}>
+            &nbsp &nbsp &nbsp &nbsp
+            <textarea name="description" placeholder="popis produktu">{{$product[0]->description}}
+            </textarea>
+            <input name="series_number" placeholder="sériové číslo" type="number" value={{$product[0]->series_number}}>
+            <input name="count" placeholder="Počet" type="number" value={{$product[0]->count}}>
+            <button type="submit">Update</button>
+            &nbsp &nbsp
+            <a href="product/{{$product[0]->id}}/delete" class="text-sm text-gray-500 underline">Delete</a>
+        </form>
+
+</div><!--</div>-->
     <?php
     $i++
     ?>
+    <div class="my-class">
+        <a href="/edit/{{$product[0]->id}}"><button class="btn btn-secondary">{{$product[0]->description}}</button></a>
+    </div>
+
 @endwhile
 @else
     <div class="container">

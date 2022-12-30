@@ -14,38 +14,42 @@
         </div>
     @endif
 
-    <form action="{{ route('product_store') }}" method="POST" enctype="multipart/form-data">
+
+
+    <form action="/product/{{$id}}/update" method="POST" enctype="multipart/form-data">
+     @method("PATCH")
         <div class="d-flex justify-content-center">
             <div class="col-12 col-md-10 col-lg-6">
                 @csrf
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title text-center">Přidat produkt</h3>
+                        <h3 class="card-title text-center">Upravit Produkt</h3>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Váha</label>
-                            <input name="weight" type="text" class="form-control" placeholder="" required>
+                            <input name="weight" type="text" class="form-control" placeholder="" required value={{$weight}} >
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Jednotka</label>
-                            <input name="unit" type="text" class="form-control" placeholder="" required>
+                            <input name="unit" type="text" class="form-control" placeholder=""  required value={{$unit}}>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Cena</label>
-                            <input name="price" type="number" class="form-control" placeholder="" required>
+                            <input name="price" type="number" class="form-control" placeholder="" value={{$price}} required>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Popis produktu</label>
-                            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="10" required></textarea>
+                            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="10" required>{{$description}}</textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Přidat</button>
+                            <button type="submit" class="btn btn-primary">Uložit změny</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+
 @endsection
