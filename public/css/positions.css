@@ -1,7 +1,25 @@
+@media (min-width: 1417px) {
 .your-class{
     width: 100%;
     white-space: nowrap;
     overflow-x: auto;
+}
+}
+@media (max-width: 1416px) {
+.your-class{
+    display: none;
+}}
+
+
+@media (max-width: 1417px) {
+    .my-class{
+        text-align: center;
+} }
+
+@media (min-width: 1417px) {
+    .my-class{
+        display: none
+    }
 }
 .my_button{
     width:300px;
