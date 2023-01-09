@@ -26,13 +26,14 @@ Route::middleware(["auth"])->group(function () {
     Route::get('/add_product', function () {
         return view('add_product');
     })->name("add_product");
-    /*Route::get("/add_product",[\App\Http\Controllers\TaskController::class, "add_product"])->name("add_product");*/
+  /* Route::get("/add_product",[\App\Http\Controllers\TaskController::class, "add_product"])->name("add_product");*/
 
 
     Route::get("/edit_product",[\App\Http\Controllers\TaskController::class, "show"])->name("edit_product");
 
     Route::get("/edit/{id}",[\App\Http\Controllers\TaskController::class, "edit"])->name("edit");
-    Route::get("/edit_package",[\App\Http\Controllers\TaskController::class, "edit_package"])->name("edit_package");
+    Route::get("/edit_package/{id}",[\App\Http\Controllers\TaskController::class, "edit_package"]);
+    Route::get("/edit_packages",[\App\Http\Controllers\TaskController::class, "edit_packages"])->name("edit_packages");
     Route::get("/package",[\App\Http\Controllers\TaskController::class, "package"])->name("package");
     Route::post("/store",[\App\Http\Controllers\ProductController::class, "store"])->name("product_store");
     Route::post("/package",[\App\Http\Controllers\ProductController::class, "package"])->name("create_package");

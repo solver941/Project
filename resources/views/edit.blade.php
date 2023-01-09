@@ -24,7 +24,7 @@
 
 
             <!--<div class=".d-none .d-xl-block .d-xxl-none ">-->
-            <div class="">
+            <div class="your-class">
                 <form action="/product/{{ $id }}/update" method="POST" enctype="multipart/form-data"class="table-responsive">
                     @csrf
                     @method('PATCH')

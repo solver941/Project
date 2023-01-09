@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon"  type="image/x-icon"  href="/storage/favicon.ico">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -15,14 +16,15 @@
 
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/27cb10a11c.js"></script>
-
-
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> --}}
+    <link rel="icon" type="image/x-icon" class="fas fa-wrench">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link href="css/positions.css" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<!--    <link href="{{--{{ asset(storage_path("app/public/favicon.ico")) }}--}}" rel="stylesheet">-->
+
 
 
     <!-- Scripts -->
@@ -60,7 +62,7 @@
                         @endif
 
                     @else
-                        <li class="nav-item"><a class="nav-link" href="{{ url('add_product') }}">Přidat produkt</a></li>
+                        <li class="nav-item"><button class="nav-item" onclick="window.location='{{ url("add_product") }}'">Přidat produkt</button></li>
                         <li class="nav-item">
                             <button onclick="window.location='{{ url("edit_product") }}'">Upravit produkt</button>
                         </li>
@@ -68,10 +70,10 @@
                             <button onclick="window.location='{{ url("package") }}'">Vytvořit balíček</button>
                         </li>
                         <li class="nav-item">
-                            <button onclick="window.location='{{ url("edit_package") }}'">Upravit balíček</button>
+                            <button onclick="window.location='{{ url("edit_packages") }}'">Upravit balíček</button>
                         </li>
-
-                        <li class="nav-item dropdown">
+                        &nbsp &nbsp &nbsp
+                        <li class="nav-item dropdown right_align">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}

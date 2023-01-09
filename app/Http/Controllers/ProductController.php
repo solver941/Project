@@ -36,7 +36,7 @@ class ProductController extends Controller
         $product->weight = $request->input("weight");
         $product->unit = $request->input("unit");
         $product->price = $request->input("price");
-        $product->description = $request->input("description");
+        $product->description = $request->input("description") ?? "";
         $product->count = $request->input("count") ?? 1;
         $product->series_number = $request->input("series_number") ?? "undefined";
         $saved = $product->save();
@@ -58,6 +58,7 @@ class ProductController extends Controller
         } else {
             $product = Package::find($id);
         }
+
         $deleted = $product->delete();
         if ($deleted) {
             $message = "Úspěšně odstraněno";
